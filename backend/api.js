@@ -3,11 +3,14 @@ const express = require("express");
 const app = express();
 const dotenv = require("dotenv")
 const cookieParser = require("cookie-parser");
+const cors = require('cors');
+app.use(cors());
+
 
 dotenv.config();
 /***********db connection************* */
 const dbLink = `mongodb+srv://${process.env.DB_USERNAME}
-:${process.env.DB_PASSWORD}@cluster0.zc5df.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
+:${process.env.DB_PASSWORD}@cluster0.98clx.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
 
 mongoose.connect(dbLink).then(function(connection){
     console.log('connected to db')
